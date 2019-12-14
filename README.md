@@ -1,3 +1,6 @@
+## See live 
+[see project](https://brk-slv-movies-case.netlify.com)
+
 ## Given
 
 There are 4 data files under data folder.
