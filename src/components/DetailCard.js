@@ -9,7 +9,7 @@ export default class DetailCard extends Component {
   handleClick = () => {
     this.setState({
       added: !this.state.added
-    })
+    });
   }
 
   render() {
