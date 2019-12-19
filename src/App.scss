@@ -45,8 +45,8 @@ img{
   justify-content: space-evenly;
 }
 
-.meter { 
-	height: 6px;  
+.meter {
+	height: 6px;
 	position: relative;
 	background: $progressBarColor;
   border-radius: 5px;
@@ -115,10 +115,6 @@ img{
 }
 
 .add{
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   align-self: flex-end;
   transform: translate(-50%,50%);
   cursor: pointer;
@@ -127,6 +123,7 @@ img{
     display: flex;
     justify-content: center;
     width: 40px;
+    height: 40px;
     background-color: $primaryColor;
     color: $mainWhite;
     font-size: 30px;
@@ -163,7 +160,7 @@ img{
 
 .meter-detail {
   width: 60%;
-	height: 6px;  
+	height: 6px;
 	position: relative;
 	background: $progressBarColor;
   border-radius: 5px;
@@ -205,7 +202,7 @@ img{
     span {
       color: $primaryColor;
     }
-  } 
+  }
 }
 
 .btn-add{
