@@ -15,10 +15,7 @@ export default class DetailCard extends Component {
   render() {
 
     const { id, year, originalTitle, duration, imdbRating, genres, posterurl, storyline, actors, writers, directors } = this.props;
-    const genreList = genres.map(genre => <span key={Math.random()}>{genre}{genres.indexOf(genre) !== genres.length - 1 ? ',' : ''} </span>);
-    const Directors = directors.map(director => <span key={Math.random()}>{director}{directors.indexOf(director) !== directors.length - 1 ? ',' : ''} </span>);
-    const Writers = writers.map(writer => <span key={Math.random()}>{writer}{writers.indexOf(writer) !== writers.length - 1 ? ',' : ''} </span>);
-    const Stars = actors.map(actor => <span key={Math.random()}>{actor}{actors.indexOf(actor) !== actors.length - 1 ? ',' : ''} </span>);
+    const compose = (...collection) => collection.map((item, index) => <span key={index}>{item}{collection.indexOf(item) !== !collection.length - 1 ? ',' : ''} </span>)
 
     const added = this.state.added;
 
@@ -36,13 +33,13 @@ export default class DetailCard extends Component {
                 <span className="rating-detail">{imdbRating}</span>
                 <div className="meter-detail"><span style={{ width: `${imdbRating * 10}%` }}></span></div>
               </div>
-              <p className="grey">{year} · {genreList} · {duration} </p>
+              <p className="grey">{year} · {compose(genres)} · {duration} </p>
             </div>
             <p className="movie-story-detail">{storyline}</p>
             <div className="movie-info-detail">
-              <h5>Director: {Directors}</h5>
-              <h5>Writers: {Writers}</h5>
-              <h5>Stars: {Stars}</h5>
+              <h5>Director: {compose(directors)}</h5>
+              <h5>Writers: {compose(writers)}</h5>
+              <h5>Stars: {compose(actors)}</h5>
             </div>
             <Link
               to={`/detail/${id}`}
